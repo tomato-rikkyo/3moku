@@ -121,7 +121,7 @@ def pv_mcts_scores(model, state, temperature):
 def pv_mcts_action(model, temperature=0):
     def pv_mcts_action(state):
         scores = pv_mcts_scores(model, state, temperature)
-        return np.random.choice(state.legal_actions(), p=scores)
+        return (np.random.choice(state.legal_actions(), p=scores), scores)
     return pv_mcts_action
 
 # ボルツマン分布

@@ -51,7 +51,8 @@ class GameUI(tk.Frame):
         if self.state.is_done():
             return
 
-        action = self.next_action(self.state)
+        action, scores = self.next_action(self.state)
+        print(scores)
         self.state = self.state.next(action)
         self.on_draw()
 
